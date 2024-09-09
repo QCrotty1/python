@@ -18,6 +18,11 @@ class My_Api_Handler():
         api_url = "https://randomuser.me/api/"
         response = requests.get(url=api_url, timeout=10)
         if response.status_code == 200:
-            return response.json()['results'][0]
+            response.json()['results'][0]
         print (f"{response.status_code} : {response.text}")
         
+    def get_yes_no(self):
+        """Function should make a get request to https://yesno.wtf/api and return the answer.  This api returns as yes or no value.  The response
+        will be a json object if the status code is 200.  Where the value of the answer is in the ['answer'] key of the json object"""
+
+

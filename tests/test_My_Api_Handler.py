@@ -8,4 +8,12 @@ def test_cat_fact():
 
 def test_get_user():
     user = my_api.get_user()
-    assert user['gender'] != ""
+    assert user.get('gender') is not None
+
+def test_yes_no():
+    answers = [
+        'yes',
+        'no'
+    ]
+    answer = my_api.yes_no()
+    assert answer in answers 
